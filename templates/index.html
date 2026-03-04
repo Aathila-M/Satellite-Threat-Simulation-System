@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Satellite Threat Detection</title>
+    <style>
+        body{
+            font-family: Arial;
+            background:#0b1d3a;
+            color:white;
+            text-align:center;
+        }
+        form{
+            margin-top:30px;
+        }
+        input,select{
+            padding:8px;
+            margin:5px;
+            width:200px;
+        }
+        button{
+            padding:10px 20px;
+            background:#1abc9c;
+            border:none;
+            color:white;
+            font-size:16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🛰 Satellite Threat Simulation System</h1>
+
+<form action="/predict" method="POST">
+
+<input type="number" step="any" name="signal_strength" placeholder="Signal Strength" required><br>
+
+<input type="number" step="any" name="packet_loss" placeholder="Packet Loss" required><br>
+
+<input type="number" step="any" name="latency" placeholder="Latency" required><br>
+
+<input type="number" step="any" name="frequency_variation" placeholder="Frequency Variation" required><br>
+
+<select name="encryption">
+<option value="1">Strong Encryption</option>
+<option value="0">Weak Encryption</option>
+</select>
+
+<br><br>
+
+<button type="submit">Detect Threat</button>
+
+</form>
+
+<div class="menu">
+
+<a class="navbtn" href="/analytics">📊 Analytics</a>
+
+<a class="navbtn" href="/telemetry">📡 Live Telemetry</a>
+
+<a class="navbtn" href="/earth">🛰 3D Satellite Orbit</a>
+
+<a class="navbtn" href="/cybermap">🌍 Cyber Attack Map</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Cyber Security Dashboard</title>
+
+<style>
+
+body{
+background:#0b1d3a;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+/* Header */
+
+.header{
+background:#020c1b;
+padding:20px;
+text-align:center;
+font-size:26px;
+}
+
+/* Cards */
+
+.cards{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+padding:25px;
+border-radius:10px;
+width:200px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,255,255,0.3);
+}
+
+.card h2{
+color:#1abc9c;
+}
+
+/* Prediction result */
+
+.result{
+margin-top:40px;
+text-align:center;
+font-size:28px;
+}
+
+.attack{
+color:red;
+font-weight:bold;
+}
+
+/* Navigation buttons */
+
+.menu{
+text-align:center;
+margin-top:50px;
+}
+
+.menu a{
+display:inline-block;
+margin:10px;
+padding:10px 20px;
+background:#1abc9c;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🛡 Satellite Cyber Defense Dashboard
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Active Threat</h3>
+<h2 class="attack">{{ result }}</h2>
+</div>
+
+<div class="card">
+<h3>Anomaly Status</h3>
+<h2>{{ anomaly }}</h2>
+</div>
+
+<div class="card">
+<h3>System Status</h3>
+<h2>Secure</h2>
+</div>
+
+</div>
+
+
+<div class="result">
+
+Threat Detection Result:
+<br><br>
+
+<b class="attack">{{ result }}</b>
+
+</div>
+
+
+<div class="menu">
+
+<a href="/">⬅ Back to Simulation</a>
+
+<a href="/telemetry">📡 Live Telemetry</a>
+
+<a href="/earth">🛰 3D Earth Orbit</a>
+
+<a href="/">Run Simulation</a>
+
+<a href="/analytics">Analytics</a>
+
+<a href="/network">Satellite Network</a>
+
+<a href="/simulation">Attack Simulation</a>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Jamming</h3>
+<h2>{{ stats.get('Jamming',0) }}</h2>
+</div>
+
+<div class="card">
+<h3>DoS</h3>
+<h2>{{ stats.get('DoS',0) }}</h2>
+</div>
+
+<div class="card">
+<h3>Spoofing</h3>
+<h2>{{ stats.get('Spoofing',0) }}</h2>
+</div>
+
+<div class="card">
+<h3>MITM</h3>
+<h2>{{ stats.get('MITM',0) }}</h2>
+</div>
+
+</div>
+
+
+{% if result != "Normal" %}
+
+<div style="background:red;padding:20px;margin:30px;font-size:22px">
+
+🚨 ALERT: {{ result }} Attack Detected
+
+</div>
+
+{% else %}
+
+<div style="background:green;padding:20px;margin:30px;font-size:22px">
+
+✅ System Secure
+
+</div>
+
+{% endif %}
+
+
+<!-- 🔔 SOUND ALERT -->
+
+<audio id="alarm" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
+
+<script>
+
+var attack = "{{ result }}";
+
+if(attack != "Normal"){
+document.getElementById("alarm").play();
+}
+</script>
+
+<meta http-equiv="refresh" content="5">
+
+</body>
+</html>

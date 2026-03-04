@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+}
+
+.network{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:80px;
+margin-top:120px;
+}
+
+.node{
+background:#1abc9c;
+padding:20px;
+border-radius:50%;
+width:120px;
+height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+}
+
+.signal{
+width:100px;
+height:5px;
+background:red;
+animation:move 2s infinite;
+}
+
+@keyframes move{
+0%{opacity:0}
+50%{opacity:1}
+100%{opacity:0}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🛰 Satellite Communication Network</h1>
+
+<div class="network">
+
+<div class="node">🛰 Satellite</div>
+
+<div class="signal"></div>
+
+<div class="node">📡 Ground</div>
+
+<div class="signal"></div>
+
+<div class="node">🛡 Security</div>
+
+</div>
+
+</body>
+</html>
