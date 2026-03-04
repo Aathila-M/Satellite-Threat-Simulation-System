@@ -1,0 +1,27 @@
+Title:
+
+Machine Learning-Based Threat Simulation and Detection Framework for Secure Satellite Communication Networks
+
+Abstract (Sample)
+
+Satellite communication systems are increasingly vulnerable to cyber-physical attacks such as jamming, spoofing, and distributed denial-of-service (DDoS). This paper proposes a machine learning-driven threat simulation and detection framework capable of identifying malicious patterns in satellite telemetry data. Using synthetic data modeling and Random Forest classification, the proposed system achieves high accuracy in real-time threat identification.
+
+Sections:
+
+Introduction
+
+Related Work
+
+Proposed System Architecture
+
+Threat Modeling Strategy
+
+ML-Based Detection Engine
+
+Experimental Results
+
+Comparative Analysis
+
+Future Scope
+
+Conclusion

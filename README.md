@@ -28,13 +28,46 @@ An AI-driven cybersecurity framework for simulating and detecting satellite comm
 Accuracy: 94%+
 
 ## 🌍 Live Demo
-[Deployment Link Here]
+[🌍 Live Demo  
+Currently running locally.
+
+To run the system:
+
+python app.py
+
+Open:
+http://127.0.0.1:5000]
 
 ## 📄 Research Paper
-[PDF Link]
+[📄 Research Paper
+
+Draft IEEE paper included in repository:
+
+research/ieee_paper_draft.docx]
 
 ## 🖼️ Screenshots
-(Add dashboard images)
+(## 📷 Screenshots
+
+### Threat Detection Dashboard
+![Dashboard](op-1.png)
+
+![Dashboard](op-2.png)
+
+![Dashboard](op-3.png)
+
+![Dashboard](op-4.png)
+
+### Attack Analytics
+![Analytics](op-5.png)
+
+### Live Telemetry
+![Telemetry](op-6.png)
+
+### 3D Satellite Orbit
+![Orbit](op-7.png)
+
+### Global Cyber Attack Map
+![Cyber Map](op-8.png))
 
 ## 🛠️ Installation
 ```bash
