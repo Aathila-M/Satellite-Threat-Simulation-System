@@ -75,3 +75,5 @@ pip install -r requirements.txt
 python simulation/attack_simulator.py
 python models/train_model.py
 python app.py
+
+## System Workflow

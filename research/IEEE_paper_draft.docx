@@ -43,7 +43,48 @@ An Isolation Forest algorithm identifies unusual patterns in telemetry signals t
 
 4. Visualization Dashboard
 
+
+
 A Flask-based dashboard provides real-time visualization of system performance, telemetry signals, attack statistics, and satellite orbit simulations using Plotly.
+
+                ┌─────────────────────────────┐
+                │  Satellite Telemetry Input  │
+                │ (Signal, Latency, Packet)   │
+                └───────────────┬─────────────┘
+                                │
+                                ▼
+                ┌─────────────────────────────┐
+                │   Data Preprocessing Layer  │
+                │  Feature Extraction & Clean │
+                └───────────────┬─────────────┘
+                                │
+                                ▼
+         ┌───────────────────────────────────────────────┐
+         │           Threat Detection Engine              │
+         │                                               │
+         │  RandomForest → Attack Classification         │
+         │  IsolationForest → Anomaly Detection          │
+         │  Deep Learning Model → Advanced Detection     │
+         └───────────────┬───────────────────────────────┘
+                         │
+                         ▼
+              ┌───────────────────────────┐
+              │ Threat Prediction Output  │
+              │ (DoS, Jamming, Spoofing)  │
+              └───────────────┬───────────┘
+                              │
+                              ▼
+        ┌──────────────────────────────────────────────┐
+        │     Cybersecurity Visualization Dashboard     │
+        │                                              │
+        │ • Threat Detection Dashboard                 │
+        │ • Attack Analytics Charts                    │
+        │ • Live Telemetry Graph                       │
+        │ • 3D Satellite Orbit Visualization           │
+        │ • Global Cyber Attack Map                    │
+        └──────────────────────────────────────────────┘
+
+
 
 4. Methodology
 
@@ -65,7 +106,114 @@ Additionally, a deep learning neural network model is trained to improve detecti
 
 The system processes user inputs through a web interface and generates predictions about potential threats in the satellite communication network.
 
-5. Results and Discussion
+
+
+Satellite Telemetry Data
+        │
+        ▼
+Data Preprocessing
+        │
+        ▼
+Feature Extraction
+        │
+        ▼
+Machine Learning Models
+        │
+ ┌──────────────┬───────────────┬──────────────┐
+ │              │               │              │
+ ▼              ▼               ▼
+RandomForest   IsolationForest  Deep Learning
+Threat Model   Anomaly Model    Neural Network
+ │              │               │
+ └──────────────┴───────────────┴──────────────┘
+                │
+                ▼
+         Threat Detection
+                │
+                ▼
+        Cybersecurity Dashboard
+                │
+ ┌──────────────┬──────────────┬──────────────┐
+ │              │              │              │
+ ▼              ▼              ▼              ▼
+Analytics   Telemetry      3D Orbit     Cyber Attack Map
+
+
+4.1 Threat Detection Algorithm
+
+
+Input:
+    Telemetry data T = {signal_strength, packet_loss, latency,
+                        frequency_variation, encryption}
+
+Output:
+    Predicted threat type (Normal, DoS, Jamming, Spoofing, MITM)
+    Anomaly status
+
+Step 1: Collect telemetry parameters from satellite communication
+
+Step 2: Preprocess the data
+        • Normalize telemetry features
+        • Remove invalid or missing values
+
+Step 3: Feature extraction
+        F = {signal_strength, packet_loss, latency,
+             frequency_variation, encryption}
+
+Step 4: Apply Random Forest classifier
+        threat_type = RF_Model.predict(F)
+
+Step 5: Perform anomaly detection using Isolation Forest
+        anomaly = IF_Model.predict(F)
+
+Step 6: Apply Deep Learning model for advanced detection
+        deep_result = DL_Model.predict(F)
+
+Step 7: Evaluate results
+        IF anomaly == -1
+            anomaly_status = "Anomaly Attack Detected"
+        ELSE
+            anomaly_status = "Normal Traffic"
+
+Step 8: Display results in cybersecurity dashboard
+
+Step 9: Visualize attack statistics, telemetry graphs,
+        and satellite orbit simulation
+
+Return threat_type, anomaly_status
+
+
+
+The proposed system utilizes machine learning and deep learning models to detect cyber threats in satellite communication networks. The detection process is summarized in Algorithm 1.
+
+5. Dataset Description
+
+The dataset used in this study is a synthetic satellite telemetry dataset generated to simulate normal and malicious communication patterns within a satellite network environment. Since real satellite telemetry data is often restricted due to security and privacy concerns, synthetic data generation was employed to model realistic telemetry behavior.
+
+The dataset contains telemetry parameters that represent communication characteristics between satellites and ground stations.
+
+Dataset Features
+Feature	Description
+Signal Strength	Represents the received signal power from satellite communication
+Packet Loss	Percentage of packets lost during transmission
+Latency	Communication delay between satellite and receiver
+Frequency Variation	Variation in signal frequency caused by interference or attack
+Encryption Status	Indicates whether communication is encrypted
+Attack Type	Label representing the type of cyber attack
+Attack Categories
+
+The dataset simulates multiple types of cyber threats:
+
+Attack Type	Description
+Normal	Legitimate satellite communication
+DoS	Denial of Service attack disrupting signal communication
+Jamming	Signal interference attack
+Spoofing	Fake satellite signal injection
+MITM	Man-in-the-Middle attack intercepting communication
+
+The dataset is used to train and evaluate machine learning and deep learning models for detecting abnormal satellite communication behavior.
+
+6. Results and Discussion
 
 The proposed system successfully detects multiple types of cyber attacks in the simulated satellite communication environment. Experimental evaluation shows that the Random Forest model achieves high classification accuracy in identifying attack types.
 
@@ -73,13 +221,13 @@ The anomaly detection model effectively identifies unusual telemetry patterns, p
 
 The cybersecurity dashboard allows real-time monitoring of satellite telemetry data and visualizes attack statistics through interactive charts and graphs.
 
-6. Conclusion
+7. Conclusion
 
 This research presents a machine learning and deep learning based framework for detecting cyber threats in satellite communication systems. The proposed Satellite Threat Simulation System integrates threat detection algorithms, anomaly detection, and an interactive visualization dashboard.
 
 The system demonstrates the potential of artificial intelligence techniques in improving the security and monitoring of satellite networks. Future work may focus on integrating real satellite telemetry data, enhancing real-time attack detection, and deploying the system on cloud platforms for large-scale monitoring.
 
-References (Example)
+8. References 
 
 S. Axelsson, "Intrusion Detection Systems: A Survey and Taxonomy," IEEE Journal.
 
